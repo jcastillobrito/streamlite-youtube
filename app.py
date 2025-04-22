@@ -33,11 +33,8 @@ def get_transcript(video_id, languages=['es']):
         # Preparar el contenido para el archivo
         transcript_text = ""
         for line in transcript:
-            start_seconds = line['start']
-            time_format = format_time(start_seconds)
             
             transcript_text += f"{line['text']}\n"
-            transcript_text += f"Start: {time_format}, Duration: {line['duration']}\n"
             transcript_text += "\n"
         
         return transcript_text
